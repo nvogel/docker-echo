@@ -6,9 +6,8 @@ DOCKER_REGISTRY ?= quay.io
 
 RELEASE=$(shell cat VERSION)
 COMMIT?=$(shell git rev-parse --short HEAD)
-BUILD_TIME?=$(shell date -u '+%Y-%m-%d_%H:%M:%S')
 
-IMAGE_BUILD=$(NS)/$(NAME)-$(BUILD_TIME)-$(COMMIT)
+IMAGE_BUILD=$(NS)/$(NAME):$(RELEASE)-$(COMMIT)
 IMAGE_RELEASE=$(DOCKER_REGISTRY)/$(NS)/$(NAME):$(RELEASE)
 
 help: ## Print help [ default target ]
