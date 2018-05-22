@@ -10,7 +10,7 @@ deploy:
   on:
     tags: true
 - provider: script
-  script: DOCKER_PASSWORD="$DOCKER_HUB_PASSWORD" DOCKER_USERNAME=nvgl REGISTRY=registry.hub.docker.com make push
+  script: DOCKER_PASSWORD="$DOCKER_HUB_PASSWORD" DOCKER_USERNAME=nvgl DOCKER_REGISTRY=registry.hub.docker.com make push
   skip_cleanup: true
   on:
     tags: true
