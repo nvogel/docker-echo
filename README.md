@@ -5,3 +5,16 @@ Docker image for the golang echo server
 
 - https://hub.docker.com/r/nvgl/echo/tags
 - https://quay.io/repository/nvgl/echo?tab=tags
+
+# Travis
+
+```
+docker run --rm -ti -v "$PWD":/usr/src/myapp ruby:2.5 /bin/bash
+# Install travis
+gem install travis
+cd /usr/src/myapp
+# DockerHub
+travis encrypt DOCKER_HUB_PASSWORD='CHANGEME' --add
+# Quay
+travis encrypt DOCKER_PASSWORD='CHANGEME' --add
+```

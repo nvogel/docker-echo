@@ -7,7 +7,7 @@ DOCKER_REGISTRY ?= quay.io
 RELEASE=$(shell git symbolic-ref -q --short HEAD 2> /dev/null || git describe --tags --exact-match 2> /dev/null || echo $(TRAVIS_BRANCH))
 COMMIT?=$(shell git rev-parse --short HEAD)
 
-IMAGE_BUILD=$(NS)/$(NAME):$(RELEASE)-$(COMMIT)
+IMAGE_BUILD=$(NAME):$(RELEASE)-$(COMMIT)
 IMAGE_RELEASE=$(DOCKER_REGISTRY)/$(NS)/$(NAME):$(RELEASE)
 
 .PHONY: help
